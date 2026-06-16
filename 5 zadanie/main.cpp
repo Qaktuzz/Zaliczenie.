@@ -1,0 +1,60 @@
+#include <iostream>
+
+void copy_text(char * text, char * destination) {
+    while (*text) {
+        *destination = *text;
+        destination++;
+        text++;
+    }
+}
+
+
+void to_lowercase(char *str) {
+
+    while (*str) {
+        if ('A' <= *str && *str <= 'Z') {
+            *str += ('a' - 'A');
+
+
+        }*str++;
+    }
+}
+void to_uppercase(char *str) {
+    while (*str) {
+        if ('a' <= *str && *str <= 'z') {
+            *str += ('A' - 'a');
+
+        }*str++;
+    }
+}
+int size_text(char *str) {
+    int size = 0;
+    while (*str) {
+        size++;
+        str++;
+
+    }return size;
+}
+// char lower(char *str) {
+//    char c[size_text(str)];
+//     copy_text(str,c);
+//     while (c) {
+//         if ('A' <= c && c <= 'Z') {
+//             c += ('a' - 'A');
+//         }
+//     }return c;
+// }
+
+int main() {
+    char str[]="Ala nie ma kota";
+    printf("%s\n", str);
+    to_lowercase(str);
+    // printf("%s\n", lower(str));
+    printf("%s\n", str);
+    to_uppercase(str);
+    printf("%s\n", str);
+    printf("text size=%d\n", size_text(str));
+
+
+    return 0;
+}
